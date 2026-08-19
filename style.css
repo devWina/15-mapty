@@ -72,10 +72,55 @@ a:visited {
   padding: 1.5rem 2.25rem;
   margin-bottom: 1.75rem;
   cursor: pointer;
+  position: relative;
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 0.75rem 1.5rem;
+}
+
+.workout__delete {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--color-light--1);
+  cursor: pointer;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.workout__delete:hover {
+  color: #ff4444;
+  background-color: rgba(255, 68, 68, 0.15);
+}
+
+.workout__delete::after {
+  content: 'Delete workout';
+  position: absolute;
+  top: -2.4rem;
+  right: 0;
+  background-color: var(--color-dark--1);
+  color: var(--color-light--2);
+  font-size: 0.9rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.workout__delete:hover::after {
+  opacity: 1;
 }
 .workout--running {
   border-left: 5px solid var(--color-brand--2);
